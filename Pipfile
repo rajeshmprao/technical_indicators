@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+nse-bhavcopy-db = {editable = true, path = "/Users/rajeshmprao/Code/stocks/nse_bhavcopy_db"}
+pandas = "*"
+pymysql = "*"
+matplotlib = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
