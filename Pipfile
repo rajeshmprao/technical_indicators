@@ -8,6 +8,7 @@ nse-bhavcopy-db = {editable = true, path = "/Users/rajeshmprao/Code/stocks/nse_b
 pandas = "*"
 pymysql = "*"
 matplotlib = "*"
+pyperclip = "*"
 
 [dev-packages]
 

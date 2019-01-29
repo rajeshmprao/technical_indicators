@@ -7,12 +7,16 @@ __email__ = 'rajeshmprao@gmail.com'
 __version__ = '0.1.0'
 
 from nse_bhavcopy_db import select_price, select_split_bonus
-
+from datetime import timedelta
 import pandas as pd
 
 def adjust_values(script, from_date, to_date):
-    price_list = select_price(script, from_date, to_date)
+    new_from_date = from_date - timedelta(days = 3)
+    price_list = select_price(script, new_from_date, to_date)
     price_df = pd.DataFrame(price_list)
+    if len(price_df) == 0:
+        return pd.DataFrame()
+
     price_df.set_index("Date", inplace = True)
     split_bonus_list = select_split_bonus(script, from_date, to_date)
     split_bonus_df = pd.DataFrame(split_bonus_list)
